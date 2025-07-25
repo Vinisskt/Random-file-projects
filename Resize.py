@@ -4,7 +4,7 @@ from PIL import Image
 
 def main():
   if len(sys.argv) != 4:
-    print("python namecrypt image.jpg height width ")
+    print("python namecrypt <image.jpg> <height> <width> ")
     sys.exit(1)
   
   if checkfile(sys.argv[1]) == False:
