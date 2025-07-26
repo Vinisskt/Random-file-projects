@@ -14,7 +14,6 @@ def main():
       if libraryresize.checkfile(str(txt), "jpg") == False:
         print("file not in format .jpg")
         sys.exit(1)
-        
       libraryresize.resizeimage(txt, newsize , choice="N")
       
   if libraryresize.checkfile(sys.argv[1], "jpg") == True:
