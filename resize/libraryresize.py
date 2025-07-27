@@ -13,7 +13,7 @@ def resizeimage(file, newsize, choice):
   
 def namerandom(array):
   randomname = ""
-  for i in range(5):
+  for i in range(8):
     randomname += random.choice(array)
   return randomname
 
@@ -23,8 +23,7 @@ def rename(choice):
     newname = input("enter a name no jpg")
     filename = newname + ".jpg"
   if choice == "N":
-    arrayletters = list(string.ascii_lowercase())
-
+    arrayletters = list(string.ascii_lowercase)
     filename = namerandom(arrayletters) + ".jpg"
   return filename
     
