@@ -1,6 +1,8 @@
 import random
 import os
 from PIL import Image
+import string
+
 
 def resizeimage(file, newsize, choice):
   filename = rename(choice)
@@ -21,8 +23,9 @@ def rename(choice):
     newname = input("enter a name no jpg")
     filename = newname + ".jpg"
   if choice == "N":
-    array = ["a","e","u","k","m"]
-    filename = namerandom(array) + ".jpg"
+    arrayletters = list(string.ascii_lowercase())
+
+    filename = namerandom(arrayletters) + ".jpg"
   return filename
     
 def checkfile(file, imageformat):
