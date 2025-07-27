@@ -3,7 +3,7 @@ import libraryresize
 
 def main():
   if len(sys.argv) != 4:
-    print("python namecrypt <image.jpg> or <file.txt> <height> <width> ")
+    print("python namecrypt <image.jpg> or <file.txt> or <directory imagedir> <height> <width> ")
     sys.exit(1)
 
   newsize = (int(sys.argv[2]),int(sys.argv[3]))
@@ -20,5 +20,13 @@ def main():
     choice = input("enter Y or N").upper()
     libraryresize.resizeimage(sys.argv[1], newsize, choice)
     
+  if libraryresize.checkfile(sys.argv[1], "dir") == True:
+    listdirectory = libraryresize.directoryimage()
+    for image in listdirectory:
+      if libraryresize.checkfile(image, "jpg") == False:
+        print("file not in format .jpg")
+        sys.exit(1)
+      libraryresize.resizeimage("./imagedir/" + image, newsize , choice="N")
+  
 if __name__ == '__main__':
   main()

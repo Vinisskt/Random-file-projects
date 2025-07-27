@@ -1,6 +1,6 @@
 import random
+import os
 from PIL import Image
-import sys
 
 def resizeimage(file, newsize, choice):
   filename = rename(choice)
@@ -39,3 +39,8 @@ def readfiletxt(txtfile):
       text = text.strip()
       arraytxt.append(str(text))
     return arraytxt
+
+def directoryimage():
+  imagedirectory = "./imagedir"
+  listdirectory = os.listdir(imagedirectory)
+  return listdirectory
